@@ -6,34 +6,163 @@
         <template>Hello, I'm puffy, the computer science career advising chatbot. What's your name?</template>
     </category>
     
+    <!-- get user's name -->
     <category>
         <pattern>my name is *</pattern>
         <template>
             Hi, 
-            <set name="name"><star/></set>!
-            Are you looking for some career options to consider?.
+            <set name="name"> <star /></set>!
+             Are you looking for some career options to consider?.
              <button>
                  <text>yes</text>
-                 <postback>yesOption</postback>
+                 <postback>yesCareer</postback>
              </button>
              <button>
                  <text>no</text>
-                 <postback>noOption</postback>
+                 <postback>noCareer</postback>
+             </button>
+        </template>
+    </category>
+    
+    <!-- confirm start -->
+    <category>
+        <pattern>yesCareer</pattern>
+        <template>Great! To begin, let me ask you a few questions to find your interests. Ready?
+            <button>
+                 <text>Ready</text>
+                 <postback>yesBegin</postback>
+             </button>
+             <button>
+                 <text>Not ready</text>
+                 <postback>noBegin</postback>
              </button>
         </template>
     </category>
     
     <category>
-        <pattern>yesOption</pattern>
-        <template>you said yes</template>
+        <pattern>noCareer</pattern>
+        <template>Career stuff can be overwhelming. Come visit again when you're ready to explore.</template>
+    </category>
+    
+    <!-- working style -->
+    <category>
+        <pattern>yesBegin</pattern>
+        <template>
+            What working style do you prefer?
+            <button>
+                <text>Alone</text>
+                <postback>alone</postback>
+            </button>
+            <button>
+                <text>Team</text>
+                <postback>team</postback>
+            </button>
+            <button>
+                <text>No preference</text>
+                <postback>workNoPreference</postback>
+            </button>
+        </template>
+    </category>
+    
+     <category>
+        <pattern>noBegin</pattern>
+        <template>Career stuff can be overwhelming. Come visit again when you're ready to explore.</template>
+    </category>
+    
+    <!-- Data -->
+    <category>
+        <pattern>Alone</pattern>
+        <template>What is your interest level with data?
+            <button>
+                <text>I like analyzing it.</text>
+                <postback>analyze</postback>
+            </button>
+            <button>
+                <text>I like to protect it.</text>
+                <postback>protect</postback>
+            </button>
+            <button>
+                <text>Not really interested.</text>
+                <postback>noData</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>analyze</pattern>
+        <template>Here are some options: 
+            <ol>
+                <li>Data Analyst</li>
+                <li>Data Scientist</li>
+                <li>Data WareHouse Specialist</li>
+                <li>Data Engineer</li>
+                <li>Research Scientist</li>
+            </ol>
+        </template>
     </category>
     
     <category>
-        <pattern>noOption</pattern>
-        <template>you said no</template>
+        <pattern>protect</pattern>
+        <template>Here are some options: 
+            <ol>
+                <li>Security Engineer</li>
+                <li>Ethical hacking</li>
+                <li>Data protection officer</li>
+                <li>Digital forensics</li>
+                <li>Security Analyst</li>
+                <li>Cloud security</li>
+                <li>Cybersecurity strategist</li>
+            </ol>
+        </template>
     </category>
-<category>
-    <pattern></pattern>
-    <template></template>
-</category>
+    
+    <!-- visual design -->
+    <category>
+        <pattern>noData</pattern>
+        <template>
+            Do you like working with visual designs?
+            <button>
+                <text>Yes</text>
+                <postback>yesDesign</postback>
+            </button>
+            <button>
+                <text>Not really interested</text>
+                <postback>noDesign</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yesDesign</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Web developer</li>
+                <li>Computer graphics</li>
+                <li>Digital Copywriter</li>
+                <li>UI designer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <!-- systems and connections -->
+    <category>
+        <pattern>noDesign</pattern>
+        <template>How about keeping people and systems connected?
+            <button>
+                <text>Yes</text>
+                <postback>yesSystem</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noSystem</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    
+    
+    
 </aiml>
