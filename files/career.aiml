@@ -3,7 +3,7 @@
 	<!-- introduction -->
 	<category>
 	    <pattern>hi *</pattern>
-        <template>Hello, I'm puffy, the computer science career advising chatbot. What's your name?</template>
+        <template>I'm puffy, the computer science career advising chatbot. What's your name?</template>
     </category>
     
     <!-- get user's name -->
@@ -82,7 +82,7 @@
                 <postback>protect</postback>
             </button>
             <button>
-                <text>Not really interested.</text>
+                <text>Not really</text>
                 <postback>noData</postback>
             </button>
         </template>
@@ -127,7 +127,7 @@
                 <postback>yesDesign</postback>
             </button>
             <button>
-                <text>Not really interested</text>
+                <text>Not really</text>
                 <postback>noDesign</postback>
             </button>
         </template>
@@ -160,6 +160,264 @@
             </button>
         </template>
     </category>
+    
+    <category>
+        <pattern>yesSystem</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Network Administrator</li>
+                <li>Systems Analyst</li>
+                <li>Cloud Practioner</li>
+            </ol>
+        </template>
+    </category>
+    
+    <!-- software -->
+    <category>
+        <pattern>noSystem</pattern>
+        <template>What is your interest level with programs?
+            <button>
+                <text>I like to build them.</text>
+                <postback>build</postback>
+            </button>
+            <button>
+                <text>I prefer to maintain them.</text>
+                <postback>maintain</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noSoftware</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>build</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Software Developer</li>
+                <li>Front-end Developer</li>
+                <li>Back-end Developer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>maintain</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Software Tester</li>
+                <li>System Analyst</li>
+                <li>Quality Assurance</li>
+                <li>Database Administrator</li>
+            </ol>
+        </template>
+    </category>
+    
+    <!-- hardware -->
+    <category>
+        <pattern>noSoftware</pattern>
+        <template>
+            Do you prefer solving more hands-on or mechanical problems?
+            <button>
+                <text>Yes</text>
+                <postback>yesMechanical</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noMechanical</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yesMechanical</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Hardware Engineer</li>
+                <li>Electronics Engineer</li>
+                <li>Telecommunications Engineer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <!-- fallback -->
+    <category>
+        <pattern>noMechanical</pattern>
+        <template>
+            There's more that can't be all mentioned here. If you'd like to explore more, click the button. Good luck, <get name="name"/>! 
+            <button>
+                <text>Go to more careers</text>
+                <url>https://www.careermatch.com/job-prep/career-insights/articles/majoring-in-computer-science-100-careers-to-consider/</url>
+            </button>
+        </template>
+    </category>
+    
+    <!-- lead -->
+    <category>
+        <pattern>team</pattern>
+        <template>
+            Do you like to lead?
+            <button>
+                <text>Yes</text>
+                <postback>yesLead</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noLead</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yesLead</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Project manager</li>
+                <li>Systems manager</li>
+                <li>QA manager</li>
+                <li>IT manager</li>
+                <li>Managing director</li>
+            </ol>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>noLead</pattern>
+        <template>
+            Do you like working with Visual elements?
+            <button>
+                <text>Yes</text>
+                <postback>yesVisual</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noVisual</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- visual, team -->
+    <category>
+        <pattern>yesVisual</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Game designer</li>
+                <li>UX/UI designer</li>
+                <li>Storyboard artist</li>
+                <li>Web designer</li>
+                <li>Interactive designer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>noVisual</pattern>
+        <template>
+            Do you like keeping people and systems connected?
+            <button>
+                <text>Yes</text>
+                <postback>yesTeamSystem</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noTeamSystem</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- systems, team -->
+    <category>
+        <pattern>yesTeamSystem</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Enterprise Architect</li>
+                <li>IT consultant</li>
+                <li>ECommerce consultant</li>
+                <li>Network Manager</li>
+                <li>Systems Manager</li>
+                <li>UX Designer</li>
+                <li>Digital marketer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>noTeamSystem</pattern>
+        <template>
+            Do you want to build and maintain programs?
+            <button>
+                <text>Yes</text>
+                <postback>yesTeamSoftware</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noTeamSoftware</postback>
+            </button>
+        </template>
+    </category>
+    
+    <!-- software, team -->
+    <category>
+        <pattern>yesTeamSoftware</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Software Developer</li>
+                <li>Machine Learning Engineer</li>
+                <li>Mobile Application Developer</li>
+                <li>Quality Assurance</li>
+                <li>Software Tester</li>
+            </ol>
+        </template>
+    </category>
+    
+    <!-- mechanical, team -->
+    <category>
+        <pattern>noTeamSoftware</pattern>
+        <template>
+            Do you prefer solving more hands-on or mechanical problems?
+            <button>
+                <text>Yes</text>
+                <postback>yesTeamMechanical</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noTeamMechanical</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yesTeamMechanical</pattern>
+        <template>
+            Here are some options:
+            <ol>
+              <li>Hardware Engineer</li>
+              <li>Electronics Engineer</li>
+              <li>Telecommunications Engineer</li>
+            </ol>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>noTeamMechanical</pattern>
+        <template>
+            There's more that can't be all mentioned here. If you'd like to explore more, click the button. Good luck, <get name="name"/>! 
+            <button>
+                <text>Go to more careers</text>
+                <url>https://www.careermatch.com/job-prep/career-insights/articles/majoring-in-computer-science-100-careers-to-consider/</url>
+            </button>
+        </template>
+    </category>
+    
     
     
     
