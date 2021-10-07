@@ -418,9 +418,47 @@
         </template>
     </category>
     
+    <category>
+        <pattern>workNoPreference</pattern>
+        <template>Do you like to lead?
+            <button>
+                <text>Yes</text>
+                <postback>yesNoPrefLead</postback>
+            </button>
+            <button>
+                <text>No really</text>
+                <postback>noNoPrefLead</postback>
+            </button>
+        </template>
+    </category>
     
+    <category>
+        <pattern>yesNoPrefLead</pattern>
+        <template>
+            Here are some options:
+            <ol>
+                <li>Project manager</li>
+                <li>Systems manager</li>
+                <li>QA manager</li>
+                <li>IT manager</li>
+                <li>Managing director</li>
+            </ol>
+        </template>
+    </category>
     
-    
-    
+    <category>
+        <pattern>noNoPrefLead</pattern>
+         <template>
+            Do you like working with Visual elements?
+            <button>
+                <text>Yes</text>
+                <postback>yesVisual</postback>
+            </button>
+            <button>
+                <text>Not really</text>
+                <postback>noVisual</postback>
+            </button>
+        </template>
+    </category>
     
 </aiml>
