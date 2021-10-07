@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+	<!-- introduction -->
+	<category>
+	    <pattern>hi *</pattern>
+        <template>Hello, I'm puffy, the computer science career advising chatbot. What's your name?</template>
+    </category>
+    
+    <category>
+        <pattern>my name is *</pattern>
+        <template>
+            Hi, 
+            <set name="name"><star/></set>!
+            Are you looking for some career options to consider?.
+             <button>
+                 <text>yes</text>
+                 <postback>yesOption</postback>
+             </button>
+             <button>
+                 <text>no</text>
+                 <postback>noOption</postback>
+             </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>yesOption</pattern>
+        <template>you said yes</template>
+    </category>
+    
+    <category>
+        <pattern>noOption</pattern>
+        <template>you said no</template>
+    </category>
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
 </aiml>
